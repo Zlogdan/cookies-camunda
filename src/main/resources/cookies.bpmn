@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_15vyqdl" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_15vyqdl" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
   <bpmn:process id="Process_0su8b58" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_1hsfk3c</bpmn:outgoing>
@@ -23,10 +23,6 @@
     <bpmn:sequenceFlow id="Flow_0e9n9ka" name="Оборудование недоступно" sourceRef="Gateway_1ocmqnl" targetRef="Activity_1dfadcr">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ERROR==1}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:task id="Activity_0dmfz0v" name="подготовка сырья">
-      <bpmn:incoming>Flow_1t2vz2v</bpmn:incoming>
-      <bpmn:outgoing>Flow_1c02t11</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:sequenceFlow id="Flow_1t2vz2v" sourceRef="Gateway_1ocmqnl" targetRef="Activity_0dmfz0v" />
     <bpmn:sequenceFlow id="Flow_1c02t11" sourceRef="Activity_0dmfz0v" targetRef="Gateway_1ipkipo" />
     <bpmn:parallelGateway id="Gateway_1ipkipo">
@@ -94,6 +90,10 @@
       <bpmn:incoming>Flow_1ulnzug</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_1ulnzug" sourceRef="Activity_1dfadcr" targetRef="Event_1a4caiu" />
+    <bpmn:serviceTask id="Activity_0dmfz0v" name="подготовка сырья" camunda:delegateExpression="${prepRawDelegate}">
+      <bpmn:incoming>Flow_1t2vz2v</bpmn:incoming>
+      <bpmn:outgoing>Flow_1c02t11</bpmn:outgoing>
+    </bpmn:serviceTask>
     <bpmn:textAnnotation id="TextAnnotation_12afgle">
       <bpmn:text>приготовление рецептурной смеси 
 {время:30}</bpmn:text>
@@ -137,9 +137,6 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0su8b58">
-      <bpmndi:BPMNShape id="TextAnnotation_07jsznn_di" bpmnElement="TextAnnotation_07jsznn">
-        <dc:Bounds x="320" y="200" width="99.99999822778292" height="39.48896631823461" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1ulnzug_di" bpmnElement="Flow_1ulnzug">
         <di:waypoint x="2050" y="327" />
         <di:waypoint x="2092" y="327" />
@@ -245,9 +242,6 @@
       <bpmndi:BPMNShape id="Activity_1dfadcr_di" bpmnElement="Activity_1dfadcr">
         <dc:Bounds x="1950" y="287" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0dmfz0v_di" bpmnElement="Activity_0dmfz0v">
-        <dc:Bounds x="460" y="287" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_19gv5pc_di" bpmnElement="Gateway_1ipkipo">
         <dc:Bounds x="615" y="302" width="50" height="50" />
       </bpmndi:BPMNShape>
@@ -307,6 +301,12 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_1by4duq_di" bpmnElement="TextAnnotation_1by4duq">
         <dc:Bounds x="1600" y="175" width="120" height="35" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_07jsznn_di" bpmnElement="TextAnnotation_07jsznn">
+        <dc:Bounds x="320" y="200" width="99.99999822778292" height="39.48896631823461" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1w9ay6b_di" bpmnElement="Activity_0dmfz0v">
+        <dc:Bounds x="460" y="287" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_173qh7a_di" bpmnElement="Association_173qh7a">
         <di:waypoint x="729" y="180" />
