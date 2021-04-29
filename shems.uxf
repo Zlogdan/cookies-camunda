@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1136</x>
+      <y>176</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>200</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>208</x>
+      <y>480</y>
+      <w>336</w>
+      <h>552</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+style=wordwrap
+Возможно если будет время добавить редакттор рецептов с возможностью сохранинея новых удаления и редактирования существующих
+-
+может стоит добавить что то ещё в базу кроме списка рецептов и истории запусков 
+-
+подумать что мы можем эмулировать с процессе кроме ошибок на тай или иной стадии или просто пауз в процессе 
+-
+придумать как реализовать паузы, возможно достаточно будет увеличить время ожидания ответа до максимума
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+чуть лучше разобраться в техпроцессе производста печенья (ну или выбрать что то другое) и в зависимости от этого исправить рецепты и схему, что бы не выглядеть глупо когда будет кто-то знающий правильный процесс будет задавать вопрос а зачем вы тут делаете ЭТО </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>624</x>
+      <y>680</y>
+      <w>120</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Java:
+    Spring boot:
+        Spring MVC
+        Hibernate &amp; JPA
+    camunda
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>744</y>
+      <w>112</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>632</x>
+      <y>528</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>ReactJs
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>576</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>120.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>0</y>
+      <w>248</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>290.0;10.0;270.0;130.0;160.0;100.0;40.0;130.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>832</x>
+      <y>616</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>frontend
+--
+valign=top
+halign=left
+ЗАПУСК ПРОЦЕССА
+-
+ИСТОРИЯ ЗАПУСКОВ
+-
+УПРАВЛЕНИЕ
+ЭМУЛЯЦИЕЙ</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>832</x>
+      <y>776</y>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>backend
+--
+valign=top
+halign=left
+СЕРВЕР 
+КАМУНДЫ
+-
+ЭМУЛЯТОР 
+ОБОРУДОВАНИЯ</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>216</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>632</y>
+      <w>80</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+fg=red</panel_attributes>
+    <additional_attributes>40.0;10.0;80.0;10.0;80.0;220.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>192</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1168</x>
+      <y>208</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>672</y>
+      <w>112</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+fg=blue</panel_attributes>
+    <additional_attributes>40.0;10.0;120.0;10.0;120.0;210.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>800</y>
+      <w>56</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.&gt;&gt;
+fg=blue</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;50.0;50.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1168</x>
+      <y>712</y>
+      <w>120</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+*РЕЦЕПТ*
+-
+вода
+(литры????)
+-
+разрыхлители
+(типы и граммы?)
+-
+жидкие компоненты
+(хз что тут)
+-
+вкусовые добавки 
+(типы и граммы?)
+-
+сахорный песок
+(граммы?)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>832</x>
+      <y>928</y>
+      <w>104</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>dataBase
+--
+valign=top
+halign=left
+список рецептов
+--
+история запусков</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>664</x>
+      <y>872</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>postgeSql
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>888</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>800</y>
+      <w>64</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;
+fg=gray</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;220.0;60.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>632</y>
+      <w>48</w>
+      <h>336</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+fg=red</panel_attributes>
+    <additional_attributes>40.0;400.0;10.0;400.0;10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>656</y>
+      <w>80</w>
+      <h>328</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+fg=green</panel_attributes>
+    <additional_attributes>80.0;390.0;10.0;390.0;10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1592</x>
+      <y>296</y>
+      <w>88</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>valign=center
+halign=center
+Middle center
+
+bla
+bla bla</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>576</x>
+      <y>480</y>
+      <w>528</w>
+      <h>552</h>
+    </coordinates>
+    <panel_attributes>общая схема технологий и систем
+--
+
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1168</x>
+      <y>904</y>
+      <w>128</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+*ИСТОРИЯ ЗАПУСКОВ*
+-
+дата запуска
+-
+номер рецепта
+-
+время окончания
+-
+статус запуска 
+(Успешно или ошибка)</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
