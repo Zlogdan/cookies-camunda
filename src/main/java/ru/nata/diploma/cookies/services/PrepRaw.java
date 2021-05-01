@@ -2,9 +2,11 @@ package ru.nata.diploma.cookies.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.nata.diploma.cookies.models.StartVariables;
 import ru.nata.diploma.cookies.repositories.HardwareParametersRepository;
 import ru.nata.diploma.cookies.repositories.RecipeRepository;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -13,15 +15,15 @@ public class PrepRaw {
     private final HardwareParametersRepository hardwareParametersRepository;
 
 
-    public StartVariables action( StartVariables start ) {
-        StartVariables init = new StartVariables();
+    public Map<String, Object> action( Long idRecipe, Long idParams ) {
+        Map<String, Object> variables = new HashMap<>();
 
-        init.setHardwareParameters( hardwareParametersRepository.findById( start.getParametersId() )
-            .orElseThrow( () -> new IllegalArgumentException( "Невозможно найти конфигурации для оборудования" ) ) );
+        variables.put( "recipe", ( recipeRepository.findById( idRecipe )
+            .orElseThrow( () -> new IllegalArgumentException( "Невозможно найти рецепт" ) ) ) );
 
-        init.setRecipe( recipeRepository.findById( start.getRecipeId() )
-            .orElseThrow( () -> new IllegalArgumentException( "Невозможно найти рецепт" ) ) );
+        variables.put( "params", ( hardwareParametersRepository.findById( idParams )
+            .orElseThrow( () -> new IllegalArgumentException( "Невозможно найти конфигурации для оборудования" ) ) ) );
 
-        return init;
+        return variables;
     }
 }

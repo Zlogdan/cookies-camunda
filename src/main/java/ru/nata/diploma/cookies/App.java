@@ -28,16 +28,17 @@ import org.springframework.context.event.EventListener;
 @EnableProcessApplication
 public class App {
 
-  @Autowired
-  private RuntimeService runtimeService;
+//    @Autowired
+//    private RuntimeService runtimeService;
 
-  public static void main(String... args) {
-    SpringApplication.run( App.class, args);
-  }
+    public static void main( String... args ) {
+        SpringApplication.run( App.class, args );
+    }
 
-  @EventListener
-  private void processPostDeploy(PostDeployEvent event) {
-    runtimeService.startProcessInstanceByKey("loanApproval");
-  }
+//    @EventListener
+//    public void processPostDeploy( PostDeployEvent event ) {
+//        runtimeService.startProcessInstanceByKey( "Cookies" );
+//
+//    }
 
 }

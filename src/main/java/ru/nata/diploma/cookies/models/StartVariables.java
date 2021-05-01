@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class StartVariables {
     Long recipeId;
-    Long ParametersId;
+    Long parametersId;
     Recipe recipe;
     HardwareParameters hardwareParameters;
 }
