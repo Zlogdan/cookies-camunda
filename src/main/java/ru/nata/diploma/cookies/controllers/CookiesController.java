@@ -8,6 +8,7 @@ import ru.nata.diploma.cookies.repositories.RecipeRepository;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -17,18 +18,18 @@ public class CookiesController {
     private final RuntimeService runtimeService;
 
     @GetMapping("/start-process")
-    public String startProcess( @RequestParam(value = "idRecipe") Long idRecipe,
-                                @RequestParam(value = "idParams") Long idParams ) {
+    public String startProcess(@RequestParam(value = "idRecipe") Long idRecipe,
+                               @RequestParam(value = "idParams") Long idParams) {
         Map<String, Object> variables = new HashMap<>();
-        variables.put( "idRecipe", idRecipe );
-        variables.put( "idParams", idParams );
-        variables.put( "ERROR", 0 );
-        return runtimeService.startProcessInstanceByKey( "Cookies", variables ).getProcessInstanceId();
+        variables.put("idRecipe", idRecipe);
+        variables.put("idParams", idParams);
+        variables.put("ERROR", 0);
+        return runtimeService.startProcessInstanceByKey("Cookies", variables).getProcessInstanceId();
     }
 
     @GetMapping("/get-recipe")
-    public Recipe getRecipe( @RequestParam(value = "name") String name ) {
-        return recipeRepository.findByName( name );
+    public Optional<Recipe> getRecipe(@RequestParam(value = "id") Long id) {
+        return recipeRepository.findById(id);
     }
 
     @GetMapping("/get-all-recipe")
@@ -37,9 +38,9 @@ public class CookiesController {
     }
 
     @PostMapping("/add-recipe")
-    public Recipe addRecipe( @RequestBody Recipe recipe ) {
+    public Recipe addRecipe(@RequestBody Recipe recipe) {
         // валидация данных
-        return recipeRepository.save( recipe );
+        return recipeRepository.save(recipe);
     }
 
 

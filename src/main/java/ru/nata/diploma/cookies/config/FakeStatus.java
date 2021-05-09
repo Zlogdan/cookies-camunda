@@ -1,22 +1,21 @@
 package ru.nata.diploma.cookies.config;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.experimental.Accessors;
 import org.springframework.stereotype.Service;
-import ru.nata.diploma.cookies.models.DevicesStatus;
 
 @Service
-@Getter
-@Setter
+@Data
+@Accessors(chain = true)
 public class FakeStatus {
-    private DevicesStatus devicesStatus;
+    private Boolean mixerStatus = true;
+    private Boolean furnaceStatus = true;
+    private Boolean holderStatus = true;
+    private Boolean analyzerStatus = true;
 
-    public FakeStatus() {
-        this.devicesStatus = new DevicesStatus()
-            .setMixer( true )
-            .setFurnace( true )
-            .setHolder( true )
-            .setAnalyzer( true );
-    }
 
+    private Boolean mixerWork = true;
+    private Boolean furnaceWork = true;
+    private Boolean holderWork = true;
+    private Boolean analyzerWork = true;
 }

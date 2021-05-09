@@ -15,14 +15,14 @@ public class PrepRaw {
     private final HardwareParametersRepository hardwareParametersRepository;
 
 
-    public Map<String, Object> action( Long idRecipe, Long idParams ) {
+    public Map<String, Object> action(Long idRecipe, Long idParams) {
         Map<String, Object> variables = new HashMap<>();
 
-        variables.put( "recipe", ( recipeRepository.findById( idRecipe )
-            .orElseThrow( () -> new IllegalArgumentException( "Невозможно найти рецепт" ) ) ) );
+        variables.put("recipe", (recipeRepository.findById(idRecipe)
+                .orElseThrow(() -> new IllegalArgumentException("Невозможно найти рецепт"))));
 
-        variables.put( "params", ( hardwareParametersRepository.findById( idParams )
-            .orElseThrow( () -> new IllegalArgumentException( "Невозможно найти конфигурации для оборудования" ) ) ) );
+        variables.put("params", (hardwareParametersRepository.findById(idParams)
+                .orElseThrow(() -> new IllegalArgumentException("Невозможно найти конфигурации для оборудования"))));
 
         return variables;
     }
