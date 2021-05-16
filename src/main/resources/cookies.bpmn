@@ -312,6 +312,10 @@
         <di:waypoint x="304" y="287" />
         <di:waypoint x="268" y="199" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_173qh7a_di" bpmnElement="Association_173qh7a">
+        <di:waypoint x="919" y="180" />
+        <di:waypoint x="880" y="143" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Association_0hinr99_di" bpmnElement="Association_0hinr99">
         <di:waypoint x="912" y="455" />
         <di:waypoint x="851" y="500" />
@@ -339,10 +343,6 @@
       <bpmndi:BPMNEdge id="Association_1alxvw8_di" bpmnElement="Association_1alxvw8">
         <di:waypoint x="1890" y="287" />
         <di:waypoint x="1850" y="210" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Association_173qh7a_di" bpmnElement="Association_173qh7a">
-        <di:waypoint x="919" y="180" />
-        <di:waypoint x="880" y="143" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

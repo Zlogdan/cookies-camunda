@@ -4,6 +4,7 @@ package ru.nata.diploma.cookies.controllers.fake.devices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.nata.diploma.cookies.config.FakeDevicesDuration;
 import ru.nata.diploma.cookies.config.FakeStatus;
@@ -26,5 +27,12 @@ public class AnalyzerController {
         return status;
     }
 
+    @GetMapping("/start")
+    public Map<String, Boolean> startAnalyzer(@RequestParam(value = "deviation") Long deviation) throws InterruptedException {
+        Map<String, Boolean> work = new HashMap<>();
+        work.put("status", fakeStatus.getAnalyzerWork());
+        Thread.sleep(duration.getAnalyzerWork()); //добавляем искуственную задержку ответа для
+        return work;
+    }
 
 }
