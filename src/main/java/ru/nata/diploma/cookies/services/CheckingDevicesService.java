@@ -28,23 +28,23 @@ public class CheckingDevicesService {
      */
     public Map<String, String> getDeviceStatus() {
         Map<String, String> result = new HashMap<>();
-        Map<String, Boolean> statuses = new HashMap<>();
+        Map<String, Map<String, Boolean>> statuses = new HashMap<>();
 
-        statuses.putAll(rest.getTemplate().getForObject(devicesUrl + "analyzer/status", Map.class));
-        statuses.putAll(rest.getTemplate().getForObject(devicesUrl + "mixer/status", Map.class));
-        statuses.putAll(rest.getTemplate().getForObject(devicesUrl + "furnace/status", Map.class));
-        statuses.putAll(rest.getTemplate().getForObject(devicesUrl + "holder/status", Map.class));
+        statuses.put("analyzer",rest.getTemplate().getForObject(devicesUrl + "analyzer/status", Map.class));
+        statuses.put("mixer",rest.getTemplate().getForObject(devicesUrl + "mixer/status", Map.class));
+        statuses.put("furnace",rest.getTemplate().getForObject(devicesUrl + "furnace/status", Map.class));
+        statuses.put("holder",rest.getTemplate().getForObject(devicesUrl + "holder/status", Map.class));
 
         List<String> errorList = new ArrayList<>();
         statuses.forEach((device, status) -> {
-            if (!status) {
+            if (!status.get("status")) {
                 errorList.add(device);
             }
         });
 
         if (!errorList.isEmpty()) {
             result.put("status", "ERROR");
-            String devices = StringUtils.join(errorList, ',');
+            String devices = "error devices: " + StringUtils.join(errorList, ',');
             result.put("devices", devices);
             return result;
         }

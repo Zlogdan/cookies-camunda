@@ -20,4 +20,3 @@ spring:
 
 devices:
   url: http://localhost:8080/devices/v1/
-

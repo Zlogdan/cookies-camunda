@@ -12,8 +12,8 @@ public class Rest {
 
     public Rest(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplate = restTemplateBuilder
-                .setConnectTimeout(Duration.ofMinutes(3))
-                .setReadTimeout(Duration.ofMinutes(5))
+                .setConnectTimeout(Duration.ofMinutes(30))
+                .setReadTimeout(Duration.ofMinutes(50))
                 .build();
 
     }

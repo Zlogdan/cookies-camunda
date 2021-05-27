@@ -27,6 +27,11 @@
     <dependencies>
         <dependency>
             <groupId>org.camunda.bpm.springboot</groupId>
+            <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+            <version>${camunda.spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.camunda.bpm.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
             <version>${camunda.spring-boot.version}</version>
         </dependency>
@@ -77,6 +82,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>

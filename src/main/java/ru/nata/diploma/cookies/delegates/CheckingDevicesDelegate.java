@@ -35,7 +35,7 @@ public class CheckingDevicesDelegate implements JavaDelegate {
         }
 
         LocalDateTime finish = LocalDateTime.now();
-        current.setId(delegateExecution.getProcessInstanceId());
+        current.setProcessId(delegateExecution.getProcessInstanceId());
         current.setStartTime(start);
         current.setFinishTime(finish);
 

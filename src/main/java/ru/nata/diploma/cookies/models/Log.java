@@ -3,6 +3,7 @@ package ru.nata.diploma.cookies.models;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
@@ -12,7 +13,9 @@ import java.time.LocalDateTime;
 @Table(name = "LOG")
 public class Log {
     @Id
-    private String id;
+    @GeneratedValue
+    private Long id;
+    private String processId;
     private LocalDateTime startTime;
     private LocalDateTime finishTime;
     private String status;

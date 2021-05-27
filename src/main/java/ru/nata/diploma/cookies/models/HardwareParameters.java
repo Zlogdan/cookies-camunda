@@ -15,6 +15,7 @@ public class HardwareParameters {
     @Id
     @GeneratedValue
     private Long id;
+    private String name;
     private Long mixerPower;
     private Long mixerTime;
     private Long furnaceTemperature;

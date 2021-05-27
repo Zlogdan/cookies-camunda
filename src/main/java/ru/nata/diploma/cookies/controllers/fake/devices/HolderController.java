@@ -26,8 +26,8 @@ public class HolderController {
         return status;
     }
 
-    @GetMapping("/start")
-    public Map<String, Boolean> startHolder(@RequestParam(value = "time") Long time) throws InterruptedException {
+    @GetMapping("/ready")
+    public Map<String, Boolean> startHolder() throws InterruptedException {
         Map<String, Boolean> work = new HashMap<>();
         work.put("status", fakeStatus.getHolderWork());
         Thread.sleep(duration.getHolderWork()); //добавляем искуственную задержку ответа для

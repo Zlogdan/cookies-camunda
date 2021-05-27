@@ -25,7 +25,7 @@ public class MixerService {
         Map<String, Long> uriParams = new HashMap<>();
         uriParams.put("time", time);
         Map<String, Boolean> request = rest.getTemplate()
-                .getForObject(devicesUrl + "mixer/start", Map.class, uriParams);
+                .getForObject(devicesUrl + "mixer/start?time=30", Map.class, uriParams);
 
         if (request == null || !request.get("status")) {
             work.put("status", "ERROR");
