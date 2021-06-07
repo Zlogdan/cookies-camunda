@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_15vyqdl" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_15vyqdl" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
   <bpmn:process id="Cookies" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" camunda:asyncAfter="true">
       <bpmn:outgoing>Flow_1hsfk3c</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:exclusiveGateway id="Gateway_1ocmqnl" name="ошибка?">
+    <bpmn:exclusiveGateway id="Gateway_1ocmqnl" name="ошибка?" default="Flow_1lctpsp">
       <bpmn:incoming>Flow_11oukjc</bpmn:incoming>
       <bpmn:outgoing>Flow_0e9n9ka</bpmn:outgoing>
       <bpmn:outgoing>Flow_1lctpsp</bpmn:outgoing>
@@ -34,7 +34,7 @@
       <bpmn:incoming>Flow_0t6gjjd</bpmn:incoming>
       <bpmn:outgoing>Flow_1gq960e</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:exclusiveGateway id="Gateway_0v0gha6" name="ошибка?">
+    <bpmn:exclusiveGateway id="Gateway_0v0gha6" name="ошибка?" default="Flow_0h1kgec">
       <bpmn:incoming>Flow_1jmge3w</bpmn:incoming>
       <bpmn:outgoing>Flow_1wa2ivr</bpmn:outgoing>
       <bpmn:outgoing>Flow_0h1kgec</bpmn:outgoing>
@@ -94,7 +94,7 @@
       <bpmn:incoming>Flow_0h1kgec</bpmn:incoming>
       <bpmn:outgoing>Flow_1a6gmkn</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:exclusiveGateway id="Gateway_0dvxw39">
+    <bpmn:exclusiveGateway id="Gateway_0dvxw39" default="Flow_1tnbd9a">
       <bpmn:incoming>Flow_1a6gmkn</bpmn:incoming>
       <bpmn:outgoing>Flow_04nonad</bpmn:outgoing>
       <bpmn:outgoing>Flow_1tnbd9a</bpmn:outgoing>
@@ -108,7 +108,7 @@
     <bpmn:sequenceFlow id="Flow_04nonad" sourceRef="Gateway_0dvxw39" targetRef="Gateway_0mz8y5b">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ERROR&gt;=1}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:exclusiveGateway id="Gateway_0ug8ohx">
+    <bpmn:exclusiveGateway id="Gateway_0ug8ohx" default="Flow_0cbbdt1">
       <bpmn:incoming>Flow_1ychj7r</bpmn:incoming>
       <bpmn:outgoing>Flow_0f8q1rd</bpmn:outgoing>
       <bpmn:outgoing>Flow_0cbbdt1</bpmn:outgoing>
@@ -122,7 +122,7 @@
     <bpmn:sequenceFlow id="Flow_0f8q1rd" sourceRef="Gateway_0ug8ohx" targetRef="Gateway_0l9cgg4">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ERROR&gt;=1}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:exclusiveGateway id="Gateway_0g4r6sg">
+    <bpmn:exclusiveGateway id="Gateway_0g4r6sg" default="Flow_11b5h4k">
       <bpmn:incoming>Flow_05n8v5o</bpmn:incoming>
       <bpmn:outgoing>Flow_1pdky91</bpmn:outgoing>
       <bpmn:outgoing>Flow_11b5h4k</bpmn:outgoing>
@@ -136,7 +136,7 @@
     <bpmn:sequenceFlow id="Flow_1pdky91" sourceRef="Gateway_0g4r6sg" targetRef="Gateway_0oxtkck">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ERROR&gt;=1}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:exclusiveGateway id="Gateway_0rqwax7">
+    <bpmn:exclusiveGateway id="Gateway_0rqwax7" default="Flow_19wy1jg">
       <bpmn:incoming>Flow_1ubwsvl</bpmn:incoming>
       <bpmn:outgoing>Flow_17to2g7</bpmn:outgoing>
       <bpmn:outgoing>Flow_19wy1jg</bpmn:outgoing>
@@ -147,8 +147,10 @@
       <bpmn:incoming>Flow_11mi2wi</bpmn:incoming>
       <bpmn:outgoing>Flow_0v1h1e2</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="Flow_17to2g7" sourceRef="Gateway_0rqwax7" targetRef="Gateway_1fb4mxa" />
-    <bpmn:exclusiveGateway id="Gateway_0aw437k">
+    <bpmn:sequenceFlow id="Flow_17to2g7" sourceRef="Gateway_0rqwax7" targetRef="Gateway_1fb4mxa">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ERROR&gt;=1}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:exclusiveGateway id="Gateway_0aw437k" default="Flow_0u91db8">
       <bpmn:incoming>Flow_187b0iw</bpmn:incoming>
       <bpmn:outgoing>Flow_1jla26u</bpmn:outgoing>
       <bpmn:outgoing>Flow_0u91db8</bpmn:outgoing>
