@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Data
@@ -19,7 +20,7 @@ public class Log {
     private LocalDateTime startTime;
     private LocalDateTime finishTime;
     private String status;
+    @Size(max = 1500)
     private String comment;
     private String operation;
-
 }

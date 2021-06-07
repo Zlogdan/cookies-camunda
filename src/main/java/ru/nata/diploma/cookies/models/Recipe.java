@@ -2,10 +2,7 @@ package ru.nata.diploma.cookies.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -22,4 +19,8 @@ public class Recipe {
     private String additive;
     private Long additiveCount;
     private Long sugar;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "hardware_parameters_id", referencedColumnName = "id")
+    private HardwareParameters hardwareParameters;
 }

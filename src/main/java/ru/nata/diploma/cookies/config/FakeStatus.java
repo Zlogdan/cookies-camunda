@@ -18,4 +18,6 @@ public class FakeStatus {
     private Boolean furnaceWork = true;
     private Boolean holderWork = true;
     private Boolean analyzerWork = true;
+    private Boolean productScale = true;
+
 }

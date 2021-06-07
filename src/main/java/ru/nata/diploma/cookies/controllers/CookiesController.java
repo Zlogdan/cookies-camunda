@@ -59,28 +59,28 @@ public class CookiesController {
 
     @GetMapping("/get-recipe")
     public Optional<Recipe> getRecipe(@RequestParam(value = "id") Long id) {
-        return recipeRepository.findById(id);
+        return recipeRepository.findById(id);//select * from RECIPE where ID=:id;
     }
 
     @GetMapping("/get-all-recipe")
     public Iterable<Recipe> getAllRecipe() {
-        return recipeRepository.findAll();
+        return recipeRepository.findAll();//select * from RECIPE
     }
 
     @PostMapping("/add-recipe")
     public Recipe addRecipe(@RequestBody Recipe recipe) {
         // валидация данных
-        return recipeRepository.save(recipe);
+        return recipeRepository.save(recipe);//insert
     }
 
     @GetMapping("/get-all-params")
     public Iterable<HardwareParameters> getAllParams() {
-        return hardwareParametersRepository.findAll();
+        return hardwareParametersRepository.findAll();//select * from  hardware_parameters
     }
 
     @GetMapping("/get-log")
     public List<Log> getLogsByProcessId(@RequestParam(value = "processId") String processId) {
-        return logRepository.findAllByProcessId(processId);
+        return logRepository.findAllByProcessId(processId);//select * from log where process_id=:processId;
     }
 
 }
